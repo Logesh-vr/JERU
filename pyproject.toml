@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jeru"
+version = "0.1.1"
+description = "A local English and Tamil Windows desktop voice assistant"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "PySide6-Essentials>=6.8,<7", "sounddevice>=0.5,<1", "numpy>=2,<3",
+  "faster-whisper>=1.2,<2", "sherpa-onnx>=1.12,<2", "sentencepiece>=0.2,<1",
+  "pywin32>=310; sys_platform=='win32'", "psutil>=7,<8"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pyinstaller>=6,<7"]
+
+[project.urls]
+Repository = "https://github.com/Logesh-vr/JERU"
+Issues = "https://github.com/Logesh-vr/JERU/issues"
+
+[project.gui-scripts]
+jeru = "jeru.app:main"
+
+[tool.setuptools.packages.find]
+include = ["jeru*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,5 @@
+# Tests use fake audio/model/device adapters; no model downloads are needed.
+pytest==9.1.1
+PySide6-Essentials==6.12.0
+numpy==2.4.6
+sounddevice==0.5.6
